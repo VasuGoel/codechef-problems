@@ -17,8 +17,10 @@ int main()
         cin >> min;
         for(int i = 1; i < n; i++) {
             cin >> goals;
-            if(goals < min)  min = goals;
-            else  if(goals - min > max)  max = goals - min;
+            if(goals > min) {
+                if(goals - min > max) max = goals - min;
+            }
+            else min = goals;
         }
         if(max)  cout << max << '\n';
         else  cout << "UNFIT\n";
